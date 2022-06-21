@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.667,C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.fmx=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\MainHesap.fmx</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.438,=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.167,=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.667,C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\MainHesap.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.932,C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\HesapApp.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
