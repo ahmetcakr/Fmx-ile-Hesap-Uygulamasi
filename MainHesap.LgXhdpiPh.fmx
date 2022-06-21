@@ -146,6 +146,23 @@
       inherited recYas: TRectangle
         Size.Width = 450.000000000000000000
         Size.Height = 695.000000000000000000
+        inherited Layout9: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label8: TLabel
+            Size.Width = 450.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited DateEdit1: TDateEdit
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout12: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label9: TLabel
+            Size.Width = 450.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
       end
     end
     inherited tabGiris: TTabItem

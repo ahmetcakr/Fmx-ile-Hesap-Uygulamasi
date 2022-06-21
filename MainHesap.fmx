@@ -421,6 +421,73 @@
         Size.Height = 541.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
+        object Layout9: TLayout
+          Align = Top
+          Margins.Top = 30.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 475.000000000000000000
+          Size.Height = 201.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Label8: TLabel
+            Align = Horizontal
+            StyledSettings = [Family]
+            Position.Y = 32.000000000000000000
+            Size.Width = 475.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claBlanchedalmond
+            TextSettings.HorzAlign = Center
+            Text = 'Do'#287'um G'#252'n'#252'n'#252'z :'
+            TabOrder = 0
+          end
+          object DateEdit1: TDateEdit
+            Date = 44733.000000000000000000
+            OnChange = DateEdit1Change
+            OnCheckChanged = DateEdit1CheckChanged
+            OnClosePicker = DateEdit1ClosePicker
+            Align = Center
+            Size.Width = 136.000000000000000000
+            Size.Height = 45.000000000000000000
+            Size.PlatformDefault = False
+            StyledSettings = [Family, Size, Style]
+            TabOrder = 1
+          end
+        end
+        object Layout12: TLayout
+          Align = Top
+          Margins.Top = 30.000000000000000000
+          Position.Y = 261.000000000000000000
+          Size.Width = 475.000000000000000000
+          Size.Height = 201.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Label9: TLabel
+            Align = Horizontal
+            StyledSettings = [Family]
+            Position.Y = 32.000000000000000000
+            Size.Width = 475.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claBlanchedalmond
+            TextSettings.HorzAlign = Center
+            Text = 'Ya'#351#305'n'#305'z :'
+            TabOrder = 0
+          end
+          object Label10: TLabel
+            StyledSettings = [Family, Size, Style]
+            Position.X = 176.000000000000000000
+            Position.Y = 96.000000000000000000
+            TextSettings.FontColor = claBlanchedalmond
+            TextSettings.HorzAlign = Center
+            Text = '0'
+            TabOrder = 1
+          end
+        end
       end
     end
     object tabGiris: TTabItem

@@ -10,7 +10,7 @@ uses
   FMX.Layouts, FMX.TabControl, FMX.Header, FMX.Edit, FMX.ComboEdit, FMX.EditBox,
   FMX.ComboTrackBar, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.SearchBox, FMX.Ani, FMX.Effects,
-  FMX.Filter.Effects;
+  FMX.Filter.Effects, FMX.DateTimeCtrls;
 
 type
   TForm2 = class(TForm)
@@ -63,6 +63,12 @@ type
     btnMultiItemVize: TButton;
     btnMultiItemFaiz: TButton;
     btnMultiItemYas: TButton;
+    DateEdit1: TDateEdit;
+    Layout9: TLayout;
+    Label8: TLabel;
+    Layout12: TLayout;
+    Label9: TLabel;
+    Label10: TLabel;
     procedure editVizeChangeTracking(Sender: TObject);
     procedure editFinalChangeTracking(Sender: TObject);
     procedure editAnaParaChangeTracking(Sender: TObject);
@@ -74,6 +80,9 @@ type
     procedure btnMultiItemVizeClick(Sender: TObject);
     procedure btnMultiItemFaizClick(Sender: TObject);
     procedure btnMultiItemYasClick(Sender: TObject);
+    procedure DateEdit1ClosePicker(Sender: TObject);
+    procedure DateEdit1CheckChanged(Sender: TObject);
+    procedure DateEdit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -130,6 +139,21 @@ begin
     lblNetKazanc.Text := FaizHesapla(editAnaPara.Text.ToInteger, faizOraný,
       combotrackVadeGün.Text.ToInteger).ToString;
   end;
+end;
+
+procedure TForm2.DateEdit1Change(Sender: TObject);
+begin
+        Label10.Text :=((Date - DateEdit1.Date) / 365).ToString;
+end;
+
+procedure TForm2.DateEdit1CheckChanged(Sender: TObject);
+begin
+        Label10.Text :=   ((Date - DateEdit1.Date) / 365).ToString;
+end;
+
+procedure TForm2.DateEdit1ClosePicker(Sender: TObject);
+begin
+     Label10.Text :=   ((Date - DateEdit1.Date) / 365).ToString;
 end;
 
 procedure TForm2.editAnaParaChangeTracking(Sender: TObject);
