@@ -1,0 +1,192 @@
+﻿inherited Form2_LgXhdpiPh: TForm2_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 0
+  inherited TabControl1: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    TabIndex = 2
+    Sizes = (
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s
+      450s
+      695s)
+    inherited tabVizeFinal: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited recVizeFinal: TRectangle
+        Size.Width = 450.000000000000000000
+        Size.Height = 695.000000000000000000
+        inherited Layout1: TLayout
+          Size.Width = 450.000000000000000000
+          inherited lblHeader: TLabel
+            Size.Width = 450.000000000000000000
+          end
+        end
+        inherited Layout2: TLayout
+          Margins.Bottom = 30.000000000000000000
+          Size.Width = 450.000000000000000000
+          Size.Height = 150.000000000000000000
+          inherited lblVize: TLabel
+            Align = Top
+            Size.Width = 450.000000000000000000
+            Size.Height = 40.000000000000000000
+          end
+          inherited editVize: TEdit
+            TextSettings.FontColor = claAntiquewhite
+            Size.Width = 150.000000000000000000
+            StyledSettings = [Family, Size, Style]
+          end
+        end
+        inherited Layout3: TLayout
+          Position.Y = 287.000000000000000000
+          Size.Width = 450.000000000000000000
+          Size.Height = 146.000000000000000000
+          inherited editFinal: TEdit
+            TextSettings.FontColor = claAntiquewhite
+            Size.Width = 150.000000000000000000
+            StyledSettings = [Family, Size, Style]
+          end
+          inherited lblFinal: TLabel
+            Align = Top
+            Size.Width = 450.000000000000000000
+          end
+        end
+        inherited Layout4: TLayout
+          Position.Y = 433.000000000000000000
+          Size.Width = 450.000000000000000000
+          Size.Height = 152.000000000000000000
+          inherited lblOrtYazisi: TLabel
+            Align = Top
+            Size.Width = 450.000000000000000000
+          end
+          inherited lblOrtalama: TLabel
+            Align = Center
+            Size.Width = 89.000000000000000000
+            Size.Height = 45.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+    inherited tabFaiz: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited recFaiz: TRectangle
+        Size.Width = 450.000000000000000000
+        Size.Height = 695.000000000000000000
+        inherited Layout5: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label1: TLabel
+            Size.Width = 450.000000000000000000
+          end
+        end
+        inherited Layout6: TLayout
+          Margins.Top = 50.000000000000000000
+          Position.Y = 107.000000000000000000
+          Size.Width = 450.000000000000000000
+          inherited Label2: TLabel
+            Size.Width = 450.000000000000000000
+          end
+          inherited editAnaPara: TEdit
+            Size.Width = 150.000000000000000000
+          end
+        end
+        inherited Layout7: TLayout
+          Position.Y = 195.000000000000000000
+          Size.Width = 450.000000000000000000
+          inherited Layout10: TLayout
+            Size.Width = 450.000000000000000000
+            inherited Label3: TLabel
+              Size.Width = 450.000000000000000000
+            end
+          end
+        end
+        inherited Layout8: TLayout
+          Position.Y = 443.000000000000000000
+          Size.Width = 450.000000000000000000
+          inherited Label4: TLabel
+            Size.Width = 450.000000000000000000
+          end
+          inherited lblNetKazanc: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+        inherited Layout11: TLayout
+          Position.Y = 317.000000000000000000
+          Size.Width = 450.000000000000000000
+          inherited listboxBanka: TListBox
+            Position.X = 128.000000000000000000
+            Viewport.Width = 322.000000000000000000
+            Viewport.Height = 126.000000000000000000
+            inherited listitemAkbank: TListBoxItem
+              Size.Width = 322.000000000000000000
+            end
+            inherited listitemCeptetep: TListBoxItem
+              Size.Width = 322.000000000000000000
+            end
+            inherited listitemOdeabank: TListBoxItem
+              Size.Width = 322.000000000000000000
+            end
+            inherited listitemYapıKredi: TListBoxItem
+              Size.Width = 322.000000000000000000
+            end
+          end
+        end
+      end
+    end
+    inherited tabYas: TTabItem
+      IsSelected = True
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited recYas: TRectangle
+        Size.Width = 450.000000000000000000
+        Size.Height = 695.000000000000000000
+        inherited Layout9: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label8: TLabel
+            Size.Width = 450.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited DateEdit1: TDateEdit
+            Size.Height = 32.000000000000000000
+          end
+        end
+        inherited Layout12: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label9: TLabel
+            Size.Width = 450.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+    inherited tabGiris: TTabItem
+      IsSelected = False
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited recGiris: TRectangle
+        Size.Width = 450.000000000000000000
+        Size.Height = 695.000000000000000000
+        inherited Label5: TLabel
+          Size.Width = 450.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited Label7: TLabel
+          Size.Width = 450.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+  end
+  inherited MultiView2: TMultiView
+    inherited Rectangle1: TRectangle
+      Opacity = 0.500000000000000000
+    end
+  end
+end

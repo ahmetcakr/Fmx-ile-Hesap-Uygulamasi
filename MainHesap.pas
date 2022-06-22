@@ -10,7 +10,7 @@ uses
   FMX.Layouts, FMX.TabControl, FMX.Header, FMX.Edit, FMX.ComboEdit, FMX.EditBox,
   FMX.ComboTrackBar, FMX.ListView.Types, FMX.ListView.Appearances,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.SearchBox, FMX.Ani, FMX.Effects,
-  FMX.Filter.Effects, FMX.DateTimeCtrls;
+  FMX.Filter.Effects, FMX.DateTimeCtrls, System.ImageList, FMX.ImgList;
 
 type
   TForm2 = class(TForm)
@@ -69,6 +69,45 @@ type
     Layout12: TLayout;
     Label9: TLabel;
     Label10: TLabel;
+    tabHacim: TTabItem;
+    recHacim: TRectangle;
+    Layout13: TLayout;
+    Layout14: TLayout;
+    Layout15: TLayout;
+    Label11: TLabel;
+    ComboBox1: TComboBox;
+    listKare: TListBoxItem;
+    listDikdörtgen: TListBoxItem;
+    listUcgen: TListBoxItem;
+    listDaire: TListBoxItem;
+    btnMultiItemHacim: TButton;
+    ImageList1: TImageList;
+    Layout16: TLayout;
+    Label12: TLabel;
+    Layout17: TLayout;
+    ComboBox2: TComboBox;
+    listCevre: TListBoxItem;
+    listAlan: TListBoxItem;
+    listHacim: TListBoxItem;
+    Label13: TLabel;
+    Layout18: TLayout;
+    Layout19: TLayout;
+    Layout20: TLayout;
+    Layout21: TLayout;
+    Label14: TLabel;
+    editKenar1: TEdit;
+    editKenar2: TEdit;
+    Label15: TLabel;
+    Layout22: TLayout;
+    Label16: TLabel;
+    editKenar3: TEdit;
+    Layout23: TLayout;
+    editKenar4: TEdit;
+    Label17: TLabel;
+    Layout24: TLayout;
+    Label18: TLabel;
+    Panel1: TPanel;
+    lblCevreAlanSonuc: TLabel;
     procedure editVizeChangeTracking(Sender: TObject);
     procedure editFinalChangeTracking(Sender: TObject);
     procedure editAnaParaChangeTracking(Sender: TObject);
@@ -83,6 +122,8 @@ type
     procedure DateEdit1ClosePicker(Sender: TObject);
     procedure DateEdit1CheckChanged(Sender: TObject);
     procedure DateEdit1Change(Sender: TObject);
+    procedure btnMultiItemHacimClick(Sender: TObject);
+    procedure editKenar1ChangeTracking(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,47 +133,36 @@ type
 
 var
   Form2: TForm2;
-  Second : Integer;
+  Second: Integer;
 
 implementation
 
 {$R *.fmx}
-{$R *.LgXhdpiPh.fmx ANDROID}
 
-// ortalama hesaplama fonksiyonu
-function ort(vize: Integer; finall: Integer): Double;
-begin
-  Result := vize * 0.4 + finall * 0.6;
-end;
-
-function FaizHesapla(anaPara: Integer; faizOraný: Double;
-  gunSayisi: Integer): Double;
-begin
-  // Günlük Faiz Getirisi = (Anapara / 100) x (Faiz Oraný / 365) x Gün Sayýsý
-  // Aylýk Faiz Getirisi = (Anapara / 100) x (Faiz Oraný / 12) x Ay Sayýsý
-  // Yýllýk Faiz Getirisi = (Anapara / 100) x (Faiz Oraný) x Yýl Sayýsý
-
-  Result := ((anaPara / 100) * faizOraný) * gunSayisi;
-end;
+uses controller;
 
 procedure TForm2.btnMultiItemFaizClick(Sender: TObject);
 begin
-TabControl1.ActiveTab := tabFaiz;
+  TabControl1.ActiveTab := tabFaiz;
+end;
+
+procedure TForm2.btnMultiItemHacimClick(Sender: TObject);
+begin
+  TabControl1.ActiveTab := tabHacim;
 end;
 
 procedure TForm2.btnMultiItemVizeClick(Sender: TObject);
 begin
-     TabControl1.ActiveTab := tabVizeFinal;
+  TabControl1.ActiveTab := tabVizeFinal;
 end;
 
 procedure TForm2.btnMultiItemYasClick(Sender: TObject);
 begin
-TabControl1.ActiveTab := tabYas;
+  TabControl1.ActiveTab := tabYas;
 end;
 
 procedure TForm2.combotrackVadeGünChangeTracking(Sender: TObject);
 begin
-
 
   if editAnaPara.Text <> '' then
   begin
@@ -143,22 +173,32 @@ end;
 
 procedure TForm2.DateEdit1Change(Sender: TObject);
 begin
-        Label10.Text :=((Date - DateEdit1.Date) / 365).ToString;
+  Label10.Text := ((Date - DateEdit1.Date) / 365).ToString;
 end;
 
 procedure TForm2.DateEdit1CheckChanged(Sender: TObject);
 begin
-        Label10.Text :=   ((Date - DateEdit1.Date) / 365).ToString;
+  Label10.Text := ((Date - DateEdit1.Date) / 365).ToString;
 end;
 
 procedure TForm2.DateEdit1ClosePicker(Sender: TObject);
 begin
-     Label10.Text :=   ((Date - DateEdit1.Date) / 365).ToString;
+  Label10.Text := ((Date - DateEdit1.Date) / 365).ToString;
+end;
+
+procedure TForm2.editKenar1ChangeTracking(Sender: TObject);
+begin
+  if (editKenar1.Text <> '') and (editKenar2.Text <> '') and
+    (editKenar3.Text <> '') and (editKenar4.Text <> '') then
+  begin
+    lblCevreAlanSonuc.Text :=
+      IntToStr(editKenar1.Text.ToInteger + editKenar2.Text.ToInteger +
+      editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
+  end;
 end;
 
 procedure TForm2.editAnaParaChangeTracking(Sender: TObject);
 begin
-
 
   if editAnaPara.Text <> '' then
   begin
@@ -191,24 +231,24 @@ end;
 
 procedure TForm2.listboxBankaChange(Sender: TObject);
 begin
-     if listitemAkbank.IsSelected then
-     begin
-          faizOraný := 19.5 / 100;
-     end
-     else if listitemCeptetep.IsSelected then
-     begin
-          faizOraný := 19.5 / 100;
-     end
-     else if listitemOdeabank.IsSelected then
-     begin
-          faizOraný := 22.5 / 100;
-     end
-     else if listitemYapýKredi.IsSelected then
-     begin
-          faizOraný := 14.5 / 100;
-     end;
+  if listitemAkbank.IsSelected then
+  begin
+    faizOraný := 19.5 / 100;
+  end
+  else if listitemCeptetep.IsSelected then
+  begin
+    faizOraný := 19.5 / 100;
+  end
+  else if listitemOdeabank.IsSelected then
+  begin
+    faizOraný := 22.5 / 100;
+  end
+  else if listitemYapýKredi.IsSelected then
+  begin
+    faizOraný := 14.5 / 100;
+  end;
 
-     if editAnaPara.Text <> '' then
+  if editAnaPara.Text <> '' then
   begin
     lblNetKazanc.Text := FaizHesapla(editAnaPara.Text.ToInteger, faizOraný,
       combotrackVadeGün.Text.ToInteger).ToString;
@@ -218,24 +258,24 @@ end;
 procedure TForm2.listboxBankaItemClick(const Sender: TCustomListBox;
   const Item: TListBoxItem);
 begin
-    if listitemAkbank.IsSelected then
-     begin
-          faizOraný := 19.5 / 100;
-     end
-     else if listitemCeptetep.IsSelected then
-     begin
-          faizOraný := 19.5 / 100;
-     end
-     else if listitemOdeabank.IsSelected then
-     begin
-          faizOraný := 22.5 / 100;
-     end
-     else if listitemYapýKredi.IsSelected then
-     begin
-          faizOraný := 14.5 / 100;
-     end;
+  if listitemAkbank.IsSelected then
+  begin
+    faizOraný := 19.5 / 100;
+  end
+  else if listitemCeptetep.IsSelected then
+  begin
+    faizOraný := 19.5 / 100;
+  end
+  else if listitemOdeabank.IsSelected then
+  begin
+    faizOraný := 22.5 / 100;
+  end
+  else if listitemYapýKredi.IsSelected then
+  begin
+    faizOraný := 14.5 / 100;
+  end;
 
-     if editAnaPara.Text <> '' then
+  if editAnaPara.Text <> '' then
   begin
     lblNetKazanc.Text := FaizHesapla(editAnaPara.Text.ToInteger, faizOraný,
       combotrackVadeGün.Text.ToInteger).ToString;
@@ -244,29 +284,38 @@ end;
 
 procedure TForm2.Timer1Timer(Sender: TObject);
 begin
-     Second := Second + 1;
+  Second := Second + 1;
 
-     case Second of
-     0 :    BandedSwirlTransitionEffect1.Strength := 0.9;
-     1 :    BandedSwirlTransitionEffect1.Strength := 0.8;
-     2 :    BandedSwirlTransitionEffect1.Strength := 0.7;
-     3 :    BandedSwirlTransitionEffect1.Strength := 0.6;
-     4 :    BandedSwirlTransitionEffect1.Strength := 0.5;
-     5 :    BandedSwirlTransitionEffect1.Strength := 0.4;
-     6 :    BandedSwirlTransitionEffect1.Strength := 0.3;
-     7 :    BandedSwirlTransitionEffect1.Strength := 0.2;
-     8 :    BandedSwirlTransitionEffect1.Strength := 0.1;
-     9 :    BandedSwirlTransitionEffect1.Strength := 0;
+  case Second of
+    0:
+      BandedSwirlTransitionEffect1.Strength := 0.9;
+    1:
+      BandedSwirlTransitionEffect1.Strength := 0.8;
+    2:
+      BandedSwirlTransitionEffect1.Strength := 0.7;
+    3:
+      BandedSwirlTransitionEffect1.Strength := 0.6;
+    4:
+      BandedSwirlTransitionEffect1.Strength := 0.5;
+    5:
+      BandedSwirlTransitionEffect1.Strength := 0.4;
+    6:
+      BandedSwirlTransitionEffect1.Strength := 0.3;
+    7:
+      BandedSwirlTransitionEffect1.Strength := 0.2;
+    8:
+      BandedSwirlTransitionEffect1.Strength := 0.1;
+    9:
+      BandedSwirlTransitionEffect1.Strength := 0;
 
-     end;
+  end;
 
-     if Second = 20 then
-     begin
-          Timer1.Enabled := false;
-          TabControl1.ActiveTab := tabVizeFinal;
-          
+  if Second = 20 then
+  begin
+    Timer1.Enabled := false;
+    TabControl1.ActiveTab := tabVizeFinal;
 
-     end;
+  end;
 end;
 
 end.

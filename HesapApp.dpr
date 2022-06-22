@@ -3,7 +3,8 @@ program HesapApp;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  MainHesap in 'MainHesap.pas' {Form2};
+  MainHesap in 'MainHesap.pas' {Form2},
+  controller in 'controller.pas';
 
 {$R *.res}
 

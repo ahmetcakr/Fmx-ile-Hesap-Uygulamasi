@@ -5,8 +5,10 @@
   inherited TabControl1: TTabControl
     Size.Width = 450.000000000000000000
     Size.Height = 695.000000000000000000
-    TabIndex = 2
+    TabIndex = 3
     Sizes = (
+      450s
+      695s
       450s
       695s
       450s
@@ -38,6 +40,7 @@
           end
           inherited editVize: TEdit
             TextSettings.FontColor = claAntiquewhite
+            TextSettings.HorzAlign = Center
             Size.Width = 150.000000000000000000
             StyledSettings = [Family, Size, Style]
           end
@@ -48,6 +51,7 @@
           Size.Height = 146.000000000000000000
           inherited editFinal: TEdit
             TextSettings.FontColor = claAntiquewhite
+            TextSettings.HorzAlign = Center
             Size.Width = 150.000000000000000000
             StyledSettings = [Family, Size, Style]
           end
@@ -94,7 +98,10 @@
             Size.Width = 450.000000000000000000
           end
           inherited editAnaPara: TEdit
+            TextSettings.FontColor = claBlanchedalmond
+            TextSettings.HorzAlign = Center
             Size.Width = 150.000000000000000000
+            StyledSettings = [Family, Size, Style]
           end
         end
         inherited Layout7: TLayout
@@ -104,6 +111,9 @@
             Size.Width = 450.000000000000000000
             inherited Label3: TLabel
               Size.Width = 450.000000000000000000
+            end
+            inherited combotrackVadeGün: TComboTrackBar
+              TextSettings.FontColor = claBlanchedalmond
             end
           end
         end
@@ -120,21 +130,23 @@
         inherited Layout11: TLayout
           Position.Y = 317.000000000000000000
           Size.Width = 450.000000000000000000
+          inherited Label6: TLabel
+            Size.Width = 425.000000000000000000
+          end
           inherited listboxBanka: TListBox
-            Position.X = 128.000000000000000000
-            Viewport.Width = 322.000000000000000000
+            Viewport.Width = 254.000000000000000000
             Viewport.Height = 126.000000000000000000
             inherited listitemAkbank: TListBoxItem
-              Size.Width = 322.000000000000000000
+              Size.Width = 254.000000000000000000
             end
             inherited listitemCeptetep: TListBoxItem
-              Size.Width = 322.000000000000000000
+              Size.Width = 254.000000000000000000
             end
             inherited listitemOdeabank: TListBoxItem
-              Size.Width = 322.000000000000000000
+              Size.Width = 254.000000000000000000
             end
             inherited listitemYapıKredi: TListBoxItem
-              Size.Width = 322.000000000000000000
+              Size.Width = 254.000000000000000000
             end
           end
         end
@@ -153,7 +165,7 @@
             TextSettings.Font.StyleExt = {00070000000000000004000000}
           end
           inherited DateEdit1: TDateEdit
-            Size.Height = 32.000000000000000000
+            TextSettings.FontColor = claBlanchedalmond
           end
         end
         inherited Layout12: TLayout
@@ -166,7 +178,7 @@
       end
     end
     inherited tabGiris: TTabItem
-      IsSelected = False
+      IsSelected = True
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited recGiris: TRectangle
@@ -179,6 +191,125 @@
         inherited Label7: TLabel
           Size.Width = 450.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inherited tabHacim: TTabItem
+      IsSelected = False
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited recHacim: TRectangle
+        Size.Width = 450.000000000000000000
+        Size.Height = 695.000000000000000000
+        inherited Layout13: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Label11: TLabel
+            Size.Width = 450.000000000000000000
+          end
+        end
+        inherited Layout14: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Layout18: TLayout
+            Size.Width = 450.000000000000000000
+            inherited Layout20: TLayout
+              inherited editKenar1: TEdit
+                TextSettings.FontColor = claBlanchedalmond
+                Size.Height = 32.000000000000000000
+                StyledSettings = [Family, Size, Style]
+              end
+            end
+            inherited Layout21: TLayout
+              inherited editKenar2: TEdit
+                TextSettings.FontColor = claBlanchedalmond
+                Size.Height = 32.000000000000000000
+                StyledSettings = [Family, Size, Style]
+              end
+            end
+          end
+          inherited Layout19: TLayout
+            Size.Width = 450.000000000000000000
+            inherited Layout22: TLayout
+              Position.X = 0.018758937716484070
+              inherited editKenar3: TEdit
+                TextSettings.FontColor = claBlanchedalmond
+                Size.Height = 32.000000000000000000
+                StyledSettings = [Family, Size, Style]
+              end
+            end
+            inherited Layout23: TLayout
+              inherited editKenar4: TEdit
+                TextSettings.FontColor = claBlanchedalmond
+                Size.Height = 32.000000000000000000
+                StyledSettings = [Family, Size, Style]
+              end
+            end
+          end
+          inherited Layout24: TLayout
+            Size.Width = 450.000000000000000000
+            inherited Label18: TLabel
+              Size.Width = 450.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+            inherited Panel1: TPanel
+              inherited lblCevreAlanSonuc: TLabel
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+            end
+          end
+        end
+        inherited Layout15: TLayout
+          Size.Width = 450.000000000000000000
+          inherited Layout16: TLayout
+            Size.Width = 450.000000000000000000
+            inherited ComboBox1: TComboBox
+              Size.Height = 32.000000000000000000
+              inherited listKare: TListBoxItem
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size, Style]
+              end
+              inherited listDikdörtgen: TListBoxItem
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size, Style]
+              end
+              inherited listUcgen: TListBoxItem
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size, Style]
+              end
+              inherited listDaire: TListBoxItem
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size, Style]
+              end
+            end
+            inherited Label12: TLabel
+              Size.Width = 450.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+          inherited Layout17: TLayout
+            Size.Width = 450.000000000000000000
+            inherited ComboBox2: TComboBox
+              Size.Height = 32.000000000000000000
+              inherited listCevre: TListBoxItem
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size]
+              end
+              inherited listAlan: TListBoxItem
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size]
+              end
+              inherited listHacim: TListBoxItem
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+                TextSettings.FontColor = claBlanchedalmond
+                StyledSettings = [Family, Size]
+              end
+            end
+            inherited Label13: TLabel
+              Size.Width = 450.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
         end
       end
     end
