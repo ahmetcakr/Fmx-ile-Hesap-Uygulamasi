@@ -657,6 +657,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label15: TLabel
                 Align = Top
@@ -707,6 +708,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
             end
             object Layout23: TLayout
@@ -728,6 +730,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label17: TLabel
                 Align = Top
@@ -1015,6 +1018,7 @@
               Size.Height = 41.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 0
+              OnChange = ComboBox2Change
               object listCevre: TListBoxItem
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
                 TextSettings.HorzAlign = Center

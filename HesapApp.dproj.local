@@ -2,12 +2,12 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.667,C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\MainHesap.pas=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.683,=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.771,C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\controller.pas=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.667,C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\MainHesap.fmx=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.932,C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\HesapApp.dproj=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.438,=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.167,=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022.06.22 19:44:12.683,=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\Unit1.pas</Transaction>
-    <Transaction>2022.06.22 19:44:27.771,C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\controller.pas=C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.438,=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.932,C:\Users\ahmet\OneDrive\Masaüstü\Work\YalinWorks\hesaplaApp\HesapApp.dproj=C:\Users\ahmet\OneDrive\Belgeler\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile Android64=""/>

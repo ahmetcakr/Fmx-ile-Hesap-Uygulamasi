@@ -75,7 +75,7 @@ type
     Layout14: TLayout;
     Layout15: TLayout;
     Label11: TLabel;
-    ComboBox1: TComboBox;
+    comboHesapSekil: TComboBox;
     listKare: TListBoxItem;
     listDikdörtgen: TListBoxItem;
     listUcgen: TListBoxItem;
@@ -85,7 +85,7 @@ type
     Layout16: TLayout;
     Label12: TLabel;
     Layout17: TLayout;
-    ComboBox2: TComboBox;
+    comboHesapCevre: TComboBox;
     listCevre: TListBoxItem;
     listAlan: TListBoxItem;
     listHacim: TListBoxItem;
@@ -124,6 +124,7 @@ type
     procedure DateEdit1Change(Sender: TObject);
     procedure btnMultiItemHacimClick(Sender: TObject);
     procedure editKenar1ChangeTracking(Sender: TObject);
+    procedure comboHesapCevreChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -140,6 +141,13 @@ implementation
 {$R *.fmx}
 
 uses controller;
+
+
+procedure HesapYap(A : integer);
+begin
+
+end;
+
 
 procedure TForm2.btnMultiItemFaizClick(Sender: TObject);
 begin
@@ -159,6 +167,23 @@ end;
 procedure TForm2.btnMultiItemYasClick(Sender: TObject);
 begin
   TabControl1.ActiveTab := tabYas;
+end;
+
+procedure TForm2.comboHesapCevreChange(Sender: TObject);
+begin
+  if (comboHesapCevre.ItemIndex = 0) and (comboHesapSekil.ItemIndex = 0) then
+  begin
+    if (editKenar1.Text <> '') and (editKenar2.Text <> '') and
+      (editKenar3.Text <> '') and (editKenar4.Text <> '') and
+      (comboHesapSekil.ItemIndex <> -1) and (comboHesapCevre.ItemIndex <> -1)
+    then
+    begin
+      lblCevreAlanSonuc.Text :=
+        IntToStr(editKenar1.Text.ToInteger + editKenar2.Text.ToInteger +
+        editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
+    end;
+  end;
+
 end;
 
 procedure TForm2.combotrackVadeGünChangeTracking(Sender: TObject);
@@ -188,12 +213,17 @@ end;
 
 procedure TForm2.editKenar1ChangeTracking(Sender: TObject);
 begin
-  if (editKenar1.Text <> '') and (editKenar2.Text <> '') and
-    (editKenar3.Text <> '') and (editKenar4.Text <> '') then
+  if (comboHesapCevre.ItemIndex = 0) and (comboHesapSekil.ItemIndex = 0) then
   begin
-    lblCevreAlanSonuc.Text :=
-      IntToStr(editKenar1.Text.ToInteger + editKenar2.Text.ToInteger +
-      editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
+    if (editKenar1.Text <> '') and (editKenar2.Text <> '') and
+      (editKenar3.Text <> '') and (editKenar4.Text <> '') and
+      (comboHesapSekil.ItemIndex <> -1) and (comboHesapCevre.ItemIndex <> -1)
+    then
+    begin
+      lblCevreAlanSonuc.Text :=
+        IntToStr(editKenar1.Text.ToInteger + editKenar2.Text.ToInteger +
+        editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
+    end;
   end;
 end;
 

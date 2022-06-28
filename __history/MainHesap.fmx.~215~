@@ -627,7 +627,6 @@
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
-                Text = '0'
                 Position.X = 50.000000000000000000
                 Position.Y = 25.000000000000000000
                 Margins.Left = 50.000000000000000000
@@ -650,7 +649,6 @@
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
-                Text = '0'
                 Position.X = 50.000000000000000000
                 Position.Y = 25.000000000000000000
                 Margins.Left = 50.000000000000000000
@@ -659,6 +657,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label15: TLabel
                 Align = Top
@@ -701,7 +700,6 @@
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
-                Text = '0'
                 Position.X = 50.000000000000000000
                 Position.Y = 25.000000000000000000
                 Margins.Left = 50.000000000000000000
@@ -710,6 +708,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
             end
             object Layout23: TLayout
@@ -723,7 +722,6 @@
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
-                Text = '0'
                 Position.X = 50.000000000000000000
                 Position.Y = 25.000000000000000000
                 Margins.Left = 50.000000000000000000
@@ -732,6 +730,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label17: TLabel
                 Align = Top
@@ -799,7 +798,7 @@
             Size.Height = 81.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object ComboBox1: TComboBox
+            object comboHesapSekil: TComboBox
               Align = Center
               Images = ImageList1
               ItemIndex = 0
@@ -1012,7 +1011,7 @@
             Size.Height = 103.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
-            object ComboBox2: TComboBox
+            object comboHesapCevre: TComboBox
               Align = Center
               ItemIndex = 0
               Size.Width = 145.000000000000000000

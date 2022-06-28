@@ -623,7 +623,7 @@
                 Text = 'Kenar 1 :'
                 TabOrder = 0
               end
-              object Edit1: TEdit
+              object editKenar1: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
@@ -635,7 +635,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
-                OnChangeTracking = Edit1ChangeTracking
+                OnChangeTracking = editKenar1ChangeTracking
               end
             end
             object Layout21: TLayout
@@ -645,7 +645,7 @@
               Size.Height = 65.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 1
-              object Edit2: TEdit
+              object editKenar2: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
@@ -657,6 +657,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label15: TLabel
                 Align = Top
@@ -695,7 +696,7 @@
                 Text = 'Kenar 3 :'
                 TabOrder = 0
               end
-              object Edit3: TEdit
+              object editKenar3: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
@@ -707,6 +708,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
             end
             object Layout23: TLayout
@@ -716,7 +718,7 @@
               Size.Height = 66.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 1
-              object Edit4: TEdit
+              object editKenar4: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Top
                 TabOrder = 1
@@ -728,6 +730,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label17: TLabel
                 Align = Top
@@ -767,7 +770,7 @@
               Size.Height = 44.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 2
-              object Label19: TLabel
+              object lblCevreAlanSonuc: TLabel
                 Align = Center
                 StyledSettings = [Family, FontColor]
                 Size.Width = 86.000000000000000000
@@ -777,7 +780,7 @@
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
                 TextSettings.HorzAlign = Center
                 Text = '0'
-                TabOrder = 1
+                TabOrder = 0
               end
             end
           end
@@ -795,10 +798,9 @@
             Size.Height = 81.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object ComboBox1: TComboBox
+            object comboHesapSekil: TComboBox
               Align = Center
               Images = ImageList1
-              ItemIndex = 0
               Size.Width = 144.000000000000000000
               Size.Height = 41.000000000000000000
               Size.PlatformDefault = False
@@ -806,7 +808,6 @@
               object listKare: TListBoxItem
                 TextSettings.HorzAlign = Center
                 StyledSettings = [Family, Size, Style, FontColor]
-                IsSelected = True
                 ItemData.Bitmap.PNG = {
                   89504E470D0A1A0A0000000D4948445200000200000002000806000000F478D4
                   FA000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -1008,18 +1009,17 @@
             Size.Height = 103.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
-            object ComboBox2: TComboBox
+            object comboHesapCevre: TComboBox
               Align = Center
-              ItemIndex = 0
               Size.Width = 145.000000000000000000
               Size.Height = 41.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 0
+              OnChange = comboHesapCevreChange
               object listCevre: TListBoxItem
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
                 TextSettings.HorzAlign = Center
                 StyledSettings = [Family, Size, FontColor]
-                IsSelected = True
                 Size.Width = 19.000000000000000000
                 Size.Height = 19.000000000000000000
                 Size.PlatformDefault = False

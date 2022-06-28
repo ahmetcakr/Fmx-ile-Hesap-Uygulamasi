@@ -635,6 +635,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
             end
             object Layout21: TLayout
@@ -656,7 +657,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
-                OnChangeTracking = editKenar2ChangeTracking
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label15: TLabel
                 Align = Top
@@ -707,6 +708,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
             end
             object Layout23: TLayout
@@ -728,6 +730,7 @@
                 Size.Height = 22.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = '0'
+                OnChangeTracking = editKenar1ChangeTracking
               end
               object Label17: TLabel
                 Align = Top
