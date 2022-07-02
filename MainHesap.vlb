@@ -154,9 +154,6 @@ Coordinates=340,232,74,51
 [Layout8]
 Coordinates=762,300,53,33
 
-[Label10]
-Coordinates=495,10,52,51
-
 [Layout7]
 Coordinates=692,300,53,33
 
@@ -185,4 +182,7 @@ Coordinates=236,300,60,33
 []
 Coordinates=159,10,67,51
 Visible=True
+
+[lblYas]
+Coordinates=495,10,52,51
 

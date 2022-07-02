@@ -1,7 +1,7 @@
 ﻿object Form2: TForm2
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'Genel Hesap Uygulamas'#305
   ClientHeight = 541
   ClientWidth = 475
   FormFactor.Width = 320
@@ -14,7 +14,7 @@
     Size.Height = 541.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 4
+    TabIndex = 0
     TabOrder = 1
     TabPosition = None
     Sizes = (
@@ -32,7 +32,7 @@
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -66,6 +66,22 @@
             TextSettings.HorzAlign = Center
             Text = 'Vize - Final Hesaplama'
             TabOrder = 0
+          end
+          object Layout25: TLayout
+            Align = Client
+            Size.Width = 475.000000000000000000
+            Size.Height = 57.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            object btnDrawer: TButton
+              Align = Left
+              Size.Width = 41.000000000000000000
+              Size.Height = 57.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'drawertoolbuttonbordered'
+              TabOrder = 0
+              Text = 'btnDrawer'
+            end
           end
         end
         object Layout2: TLayout
@@ -477,7 +493,7 @@
             Text = 'Ya'#351#305'n'#305'z :'
             TabOrder = 0
           end
-          object Label10: TLabel
+          object lblYas: TLabel
             StyledSettings = [Family, Size, Style]
             Position.X = 176.000000000000000000
             Position.Y = 96.000000000000000000
@@ -512,8 +528,8 @@
         object Timer1: TTimer
           Interval = 75
           OnTimer = Timer1Timer
-          Left = 360
-          Top = 16
+          Left = 408
+          Top = 96
         end
         object Label5: TLabel
           Align = Horizontal
@@ -558,7 +574,7 @@
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -798,10 +814,9 @@
             Size.Height = 81.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 0
-            object ComboBox1: TComboBox
+            object comboHesapSekil: TComboBox
               Align = Center
               Images = ImageList1
-              ItemIndex = 0
               Size.Width = 144.000000000000000000
               Size.Height = 41.000000000000000000
               Size.PlatformDefault = False
@@ -809,7 +824,6 @@
               object listKare: TListBoxItem
                 TextSettings.HorzAlign = Center
                 StyledSettings = [Family, Size, Style, FontColor]
-                IsSelected = True
                 ItemData.Bitmap.PNG = {
                   89504E470D0A1A0A0000000D4948445200000200000002000806000000F478D4
                   FA000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
@@ -1011,18 +1025,17 @@
             Size.Height = 103.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 1
-            object ComboBox2: TComboBox
+            object comboHesapCevre: TComboBox
               Align = Center
-              ItemIndex = 0
               Size.Width = 145.000000000000000000
               Size.Height = 41.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 0
+              OnChange = comboHesapCevreChange
               object listCevre: TListBoxItem
                 TextSettings.Font.StyleExt = {00070000000000000004000000}
                 TextSettings.HorzAlign = Center
                 StyledSettings = [Family, Size, FontColor]
-                IsSelected = True
                 Size.Width = 19.000000000000000000
                 Size.Height = 19.000000000000000000
                 Size.PlatformDefault = False

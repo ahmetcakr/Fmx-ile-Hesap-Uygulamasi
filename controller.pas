@@ -23,6 +23,8 @@ function FaizHesapla(anaPara: Integer; faizOranı: Double;
 function KareCevreHesapla(kenar1: Integer; kenar2: Integer; kenar3: Integer;
   kenar4: Integer): Double;
 
+function KareAlanHesapla(taban: Integer; yükseklik: Integer): Double;
+
 function DikdörtgenCevreHesapla(kısaKenar: Integer; uzunKenar: Integer)
   : Integer;
 
@@ -30,6 +32,8 @@ function DaireCevreHesapla(yaricap: Integer; pi: Double = 3.14): Double;
 
 function UcgenCevreHesapla(kenar1: Integer; kenar2: Integer;
   kenar3: Integer): Integer;
+
+function FaizOranıYüzdesi(bankName: String): Double;
 
 //
 implementation
@@ -60,6 +64,11 @@ begin
   Result := kenar1 + kenar2 + kenar3 + kenar4;
 end;
 
+function KareAlanHesapla(taban: Integer; yükseklik: Integer): Double;
+begin
+  Result := taban * yükseklik;
+end;
+
 function DikdörtgenCevreHesapla(kısaKenar: Integer; uzunKenar: Integer)
   : Integer;
 begin
@@ -75,6 +84,26 @@ function UcgenCevreHesapla(kenar1: Integer; kenar2: Integer;
   kenar3: Integer): Integer;
 begin
   Result := kenar1 + kenar2 + kenar3;
+end;
+
+function FaizOranıYüzdesi(bankName: String): Double;
+begin
+  if bankName = 'Akbank' then
+  begin
+    Result := 19.5 / 100;
+  end
+  else if bankName = 'Ceptetep' then
+  begin
+    Result := 19.5 / 100;
+  end
+  else if bankName = 'Odeabank' then
+  begin
+    Result := 22.5 / 100;
+  end
+  else if bankName = 'Yapıkredi' then
+  begin
+    Result := 14.5 / 100;
+  end;
 end;
 
 end.

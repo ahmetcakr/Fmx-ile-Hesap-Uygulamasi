@@ -68,7 +68,7 @@ type
     Label8: TLabel;
     Layout12: TLayout;
     Label9: TLabel;
-    Label10: TLabel;
+    lblYas: TLabel;
     tabHacim: TTabItem;
     recHacim: TRectangle;
     Layout13: TLayout;
@@ -108,6 +108,8 @@ type
     Label18: TLabel;
     Panel1: TPanel;
     lblCevreAlanSonuc: TLabel;
+    Button1: TButton;
+    Layout25: TLayout;
     procedure editVizeChangeTracking(Sender: TObject);
     procedure editFinalChangeTracking(Sender: TObject);
     procedure editAnaParaChangeTracking(Sender: TObject);
@@ -125,6 +127,10 @@ type
     procedure btnMultiItemHacimClick(Sender: TObject);
     procedure editKenar1ChangeTracking(Sender: TObject);
     procedure comboHesapCevreChange(Sender: TObject);
+
+    procedure YasHesapla();
+    procedure GirisEfektiOlustur();
+
   private
     { Private declarations }
   public
@@ -134,13 +140,54 @@ type
 
 var
   Form2: TForm2;
-  Second: Integer;
+  time: Integer;
 
 implementation
 
 {$R *.fmx}
 
 uses controller;
+
+procedure TForm2.YasHesapla();
+begin
+  lblYas.Text := ((Date - DateEdit1.Date) / 365).ToString;
+end;
+
+procedure TForm2.GirisEfektiOlustur;
+begin
+   time := time + 1;
+
+  case time of
+    0:
+      BandedSwirlTransitionEffect1.Strength := 0.9;
+    1:
+      BandedSwirlTransitionEffect1.Strength := 0.8;
+    2:
+      BandedSwirlTransitionEffect1.Strength := 0.7;
+    3:
+      BandedSwirlTransitionEffect1.Strength := 0.6;
+    4:
+      BandedSwirlTransitionEffect1.Strength := 0.5;
+    5:
+      BandedSwirlTransitionEffect1.Strength := 0.4;
+    6:
+      BandedSwirlTransitionEffect1.Strength := 0.3;
+    7:
+      BandedSwirlTransitionEffect1.Strength := 0.2;
+    8:
+      BandedSwirlTransitionEffect1.Strength := 0.1;
+    9:
+      BandedSwirlTransitionEffect1.Strength := 0;
+
+  end;
+
+  if time = 20 then
+  begin
+    Timer1.Enabled := false;
+    TabControl1.ActiveTab := tabVizeFinal;
+
+  end;
+end;
 
 procedure TForm2.btnMultiItemFaizClick(Sender: TObject);
 begin
@@ -162,6 +209,8 @@ begin
   TabControl1.ActiveTab := tabYas;
 end;
 
+/// /
+
 procedure TForm2.comboHesapCevreChange(Sender: TObject);
 begin
   if (comboHesapCevre.ItemIndex = 0) and (comboHesapSekil.ItemIndex = 0) then
@@ -176,7 +225,10 @@ begin
         editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
     end;
   end;
+
 end;
+
+// Net kazanca faizi hesaplayýp yazdýran prosedür
 
 procedure TForm2.combotrackVadeGünChangeTracking(Sender: TObject);
 begin
@@ -190,29 +242,33 @@ end;
 
 procedure TForm2.DateEdit1Change(Sender: TObject);
 begin
-  Label10.Text := ((Date - DateEdit1.Date) / 365).ToString;
+  YasHesapla();
 end;
 
 procedure TForm2.DateEdit1CheckChanged(Sender: TObject);
 begin
-  Label10.Text := ((Date - DateEdit1.Date) / 365).ToString;
+  YasHesapla();
 end;
 
 procedure TForm2.DateEdit1ClosePicker(Sender: TObject);
 begin
-  Label10.Text := ((Date - DateEdit1.Date) / 365).ToString;
+  YasHesapla();
+  // lblYas.Text := ((Date - DateEdit1.Date) / 365).ToString;
 end;
 
 procedure TForm2.editKenar1ChangeTracking(Sender: TObject);
 begin
-  if (editKenar1.Text <> '') and (editKenar2.Text <> '') and
-    (editKenar3.Text <> '') and (editKenar4.Text <> '') and
-    (comboHesapSekil.ItemIndex <> -1) and (comboHesapCevre.ItemIndex <> -1)
-  then
+  if (comboHesapCevre.ItemIndex = 0) and (comboHesapSekil.ItemIndex = 0) then
   begin
-    lblCevreAlanSonuc.Text :=
-      IntToStr(editKenar1.Text.ToInteger + editKenar2.Text.ToInteger +
-      editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
+    if (editKenar1.Text <> '') and (editKenar2.Text <> '') and
+      (editKenar3.Text <> '') and (editKenar4.Text <> '') and
+      (comboHesapSekil.ItemIndex <> -1) and (comboHesapCevre.ItemIndex <> -1)
+    then
+    begin
+      lblCevreAlanSonuc.Text :=
+        IntToStr(editKenar1.Text.ToInteger + editKenar2.Text.ToInteger +
+        editKenar3.Text.ToInteger + editKenar4.Text.ToInteger);
+    end;
   end;
 end;
 
@@ -250,21 +306,22 @@ end;
 
 procedure TForm2.listboxBankaChange(Sender: TObject);
 begin
+  // banka seçimine göre faiz oranýný güncelliyor
   if listitemAkbank.IsSelected then
   begin
-    faizOraný := 19.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Akbank');
   end
   else if listitemCeptetep.IsSelected then
   begin
-    faizOraný := 19.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Ceptetep');
   end
   else if listitemOdeabank.IsSelected then
   begin
-    faizOraný := 22.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Odeabank');
   end
   else if listitemYapýKredi.IsSelected then
   begin
-    faizOraný := 14.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Yapýkredi');
   end;
 
   if editAnaPara.Text <> '' then
@@ -279,19 +336,19 @@ procedure TForm2.listboxBankaItemClick(const Sender: TCustomListBox;
 begin
   if listitemAkbank.IsSelected then
   begin
-    faizOraný := 19.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Akbank');
   end
   else if listitemCeptetep.IsSelected then
   begin
-    faizOraný := 19.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Ceptetep');
   end
   else if listitemOdeabank.IsSelected then
   begin
-    faizOraný := 22.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Odeabank');
   end
   else if listitemYapýKredi.IsSelected then
   begin
-    faizOraný := 14.5 / 100;
+    faizOraný := FaizOranýYüzdesi('Yapýkredi');
   end;
 
   if editAnaPara.Text <> '' then
@@ -301,40 +358,11 @@ begin
   end;
 end;
 
+// efekt için alan
+
 procedure TForm2.Timer1Timer(Sender: TObject);
 begin
-  Second := Second + 1;
-
-  case Second of
-    0:
-      BandedSwirlTransitionEffect1.Strength := 0.9;
-    1:
-      BandedSwirlTransitionEffect1.Strength := 0.8;
-    2:
-      BandedSwirlTransitionEffect1.Strength := 0.7;
-    3:
-      BandedSwirlTransitionEffect1.Strength := 0.6;
-    4:
-      BandedSwirlTransitionEffect1.Strength := 0.5;
-    5:
-      BandedSwirlTransitionEffect1.Strength := 0.4;
-    6:
-      BandedSwirlTransitionEffect1.Strength := 0.3;
-    7:
-      BandedSwirlTransitionEffect1.Strength := 0.2;
-    8:
-      BandedSwirlTransitionEffect1.Strength := 0.1;
-    9:
-      BandedSwirlTransitionEffect1.Strength := 0;
-
-  end;
-
-  if Second = 20 then
-  begin
-    Timer1.Enabled := false;
-    TabControl1.ActiveTab := tabVizeFinal;
-
-  end;
+   GirisEfektiOlustur();
 end;
 
 end.
